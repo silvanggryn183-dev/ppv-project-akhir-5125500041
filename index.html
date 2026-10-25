@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator IPK</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="kepala">
+      <h1>♡ Kalkulator IPK ♡</h1>
+      <p class="subtitle">Hitung, simpan, dan pantau Indeks Prestasi Kumulatif kamu</p>
+      <nav class="tab" aria-label="Tampilan">
+        <button type="button" data-view="kalkulator" aria-current="page">
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><rect x="2" y="1" width="12" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="5" y1="5" x2="11" y2="5" stroke="currentColor" stroke-width="1.5"/><circle cx="5.5" cy="9" r="1" fill="currentColor"/><circle cx="8" cy="9" r="1" fill="currentColor"/><circle cx="10.5" cy="9" r="1" fill="currentColor"/><circle cx="5.5" cy="12" r="1" fill="currentColor"/><circle cx="8" cy="12" r="1" fill="currentColor"/><circle cx="10.5" cy="12" r="1" fill="currentColor"/></svg>
+          Kalkulator
+        </button>
+        <button type="button" data-view="riwayat">
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 4.5 V8 L11 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Riwayat
+        </button>
+        <button type="button" data-view="tentang">
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="5.5" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M2.5 14 c0-3 2.5-5 5.5-5 s5.5 2 5.5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Tentang
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Tampilan 1: kalkulator -->
+      <section id="kalkulator" class="view aktif" aria-labelledby="judul-kalkulator">
+        <h2 id="judul-kalkulator">Kalkulator</h2>
+        <form id="form-ipk" novalidate>
+          <div class="table-header" aria-hidden="true">
+            <div>Mata Kuliah</div>
+            <div>SKS</div>
+            <div>Nilai</div>
+            <div>Aksi</div>
+          </div>
+          <div id="daftar-matkul"></div>
+          <p id="pesan" class="pesan" role="alert"></p>
+          <button type="button" id="tambah">＋ Tambah Mata Kuliah</button>
+          <div class="action-buttons">
+            <button type="submit" id="hitung">▶ Hitung IPK</button>
+            <button type="button" id="simpan">♥ Simpan Hasil</button>
+            <button type="button" id="reset">↻ Reset</button>
+          </div>
+        </form>
+        <div id="hasil" class="hasil" hidden>
+          <h3>IPK Kamu</h3>
+          <div id="nilai-ipk">0.00</div>
+          <p id="predikat"></p>
+          <div class="progres" role="progressbar" aria-label="IPK terhadap 4,00" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div id="isi-progres" class="isi"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tampilan 2: riwayat -->
+      <section id="riwayat" class="view" aria-labelledby="judul-riwayat" hidden>
+        <h2 id="judul-riwayat">Riwayat</h2>
+        <div id="ringkasan" class="ringkasan" hidden>
+          <p><span id="jum-simpan">0</span> hasil tersimpan · Rata-rata: <strong id="rata-rata">0.00</strong></p>
+          <div class="progres" role="progressbar" aria-label="Rata-rata terhadap 4,00" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div id="isi-rata" class="isi"></div>
+          </div>
+        </div>
+        <ul id="daftar-riwayat" class="riwayat"></ul>
+        <p id="riwayat-kosong" class="kosong">Belum ada hasil tersimpan. Hitung IPK lalu tekan “Simpan Hasil”.</p>
+        <button type="button" id="hapus-semua">Hapus Semua</button>
+      </section>
+
+      <!-- Tampilan 3: tentang -->
+      <section id="tentang" class="view" aria-labelledby="judul-tentang" hidden>
+        <h2 id="judul-tentang">Tentang Pembuat</h2>
+        <div id="tentang-isi">
+          <div class="foto-bungkus">
+            <img id="foto" src="assets/ilustrasi.svg" alt="Ilustrasi kalkulator pink milik pembuat aplikasi" width="160" height="160" onerror="fotoGagal()">
+            <div id="foto-cadangan" class="foto-cadangan" hidden>🎓</div>
+          </div>
+          <p><strong>Silva Vicky Eka Anggrainy</strong> (NRP 5125500041)</p>
+          <p>Mahasiswi D3 Teknologi Multimedia dan Broadcasting, Politeknik Elektronika Negeri Surabaya. Aplikasi ini dibuat untuk Tugas 4 Praktikum Pemrograman Visual (TB033109): menghitung IPK, menyimpan hasilnya, dan melihat rata-rata dari waktu ke waktu.</p>
+          <ul class="kontak">
+            <li><a href="mailto:silvicky548@gmail.com">✉ Email</a></li>
+            <li><a href="https://github.com/" target="_blank" rel="noopener">⌨ GitHub</a></li>
+          </ul>
+          <h3>Jingle aplikasi</h3>
+          <audio id="jingle" controls src="assets/jingle.wav">
+            <p>Perambanmu tidak mendukung pemutar audio.</p>
+          </audio>
+          <p id="audio-gagal" class="pesan" hidden>Audio tidak dapat dimuat, tapi aplikasi tetap bisa dipakai.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
