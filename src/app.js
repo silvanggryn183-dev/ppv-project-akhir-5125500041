@@ -292,17 +292,19 @@ $('simpan').addEventListener('click', () => {
   const item = { id: Date.now(), ipk: hasil.ipk, totalSKS: hasil.totalSKS, tanggal: hasil.tanggal };
   data.unshift(item);
   tulisSimpanan(data);
-  tampilRiwayat(item.id);
+   tampilRiwayat(item.id);
   pindahKe('riwayat');
+  tampilToast('Hasil IPK tersimpan.');
 });
 
 $('hapus-semua').addEventListener('click', () => {
   if (bacaSimpanan().length === 0) return;
-  if (!confirm('Hapus semua riwayat tersimpan?')) return;
-  tulisSimpanan([]);
-  tampilRiwayat(null);
+  konfirmasiHapusSemua(() => {
+    tulisSimpanan([]);
+    tampilRiwayat(null);
+    tampilToast('Semua riwayat dihapus.');
+  });
 });
-
 tampilRiwayat(null);
 
 // Tentang: cadangan bila media gagal dimuat

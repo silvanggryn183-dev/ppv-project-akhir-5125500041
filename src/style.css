@@ -138,3 +138,21 @@ footer { margin-top: 28px; text-align: center; color: #999; font-size: 13px; }
   button, .tab button { transition: none; }
   button:hover, .tab button:hover { transform: none; }
 }
+/* Tema Bootstrap lewat variabel CSS pustaka */
+:root {
+  --bs-primary: #df367b;
+  --bs-primary-rgb: 223, 54, 123;
+  --bs-body-font-family: Arial, sans-serif;
+}
+.card { --bs-card-border-color: var(--pink-garis); }
+.btn-outline-primary {
+  --bs-btn-color: var(--pink-tua);
+  --bs-btn-border-color: var(--pink-tua);
+  --bs-btn-hover-bg: var(--pink-tua);
+  --bs-btn-hover-border-color: var(--pink-tua);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-active-bg: var(--pink-tua);
+  --bs-btn-active-border-color: var(--pink-tua);
+  --bs-btn-active-color: #fff;
+}
+.modal-title { color: var(--pink-tua); }
