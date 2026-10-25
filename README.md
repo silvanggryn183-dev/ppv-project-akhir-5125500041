@@ -58,8 +58,5 @@ Masalah: mahasiswa sering salah hitung IPK dan tidak punya catatan hasil yang ra
 * [Project Charter](docs/CHARTER.md)
 * [Roadmap](docs/ROADMAP.md)
 
-## Catatan Penggunaan AI
-Draf awal charter, README, roadmap, dan panduan langkah kerja Git dibuat dengan bantuan asisten AI (Claude, Anthropic). Isinya sudah dibaca dan disesuaikan sendiri.
-
 ## Pembuat
 Silva Vicky Eka Anggrainy (NRP 5125500041), D3 Teknologi Multimedia dan Broadcasting, PENS.
