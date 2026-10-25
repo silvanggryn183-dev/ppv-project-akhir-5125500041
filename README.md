@@ -35,3 +35,31 @@ tanpa koneksi internet.
   tiap render.
 - Teks pengguna tidak pernah ditempel via `innerHTML` (judul riwayat lewat
   `textContent`).
+
+
+# Kalkulator IPK
+
+Aplikasi web untuk menghitung dan menyimpan IPK mahasiswa agar perkembangannya mudah dipantau.
+
+Masalah: mahasiswa sering salah hitung IPK dan tidak punya catatan hasil yang rapi dari semester ke semester.
+
+## Cara Menjalankan
+1. Unduh atau clone repositori ini.
+2. Buka index.html di peramban (Chrome atau Edge).
+3. Butuh koneksi internet untuk memuat pustaka UI dari CDN.
+
+## Struktur Folder
+* index.html : halaman utama
+* src/ : kode (app.js, style.css)
+* assets/ : gambar dan audio
+* docs/ : charter, roadmap, dan dependensi
+
+## Dokumen
+* [Project Charter](docs/CHARTER.md)
+* [Roadmap](docs/ROADMAP.md)
+
+## Catatan Penggunaan AI
+Draf awal charter, README, roadmap, dan panduan langkah kerja Git dibuat dengan bantuan asisten AI (Claude, Anthropic). Isinya sudah dibaca dan disesuaikan sendiri.
+
+## Pembuat
+Silva Vicky Eka Anggrainy (NRP 5125500041), D3 Teknologi Multimedia dan Broadcasting, PENS.
