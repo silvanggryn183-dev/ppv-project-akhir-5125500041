@@ -1,7 +1,7 @@
 // ui-pustaka.js - SATU-SATUNYA berkas yang memanggil API JavaScript Bootstrap.
-// Bila pustaka diganti suatu hari nanti, cukup berkas ini yang diubah; app.js tidak perlu disentuh.
+// Bila pustaka diganti suatu hari nanti, cukup berkas ini yang diubah; modul lain tidak perlu disentuh.
 
-function tampilToast(pesan) {
+export function tampilToast(pesan) {
   const el = document.querySelector('#toastInfo');
   el.querySelector('[data-pesan]').textContent = pesan;
   bootstrap.Toast.getOrCreateInstance(el, { delay: 2500 }).show();
@@ -9,7 +9,7 @@ function tampilToast(pesan) {
 
 let aksiKonfirmasi = null;
 
-function konfirmasiHapusSemua(aksi) {
+export function konfirmasiHapusSemua(aksi) {
   aksiKonfirmasi = aksi;
   bootstrap.Modal.getOrCreateInstance(document.querySelector('#modalHapusSemua')).show();
 }
